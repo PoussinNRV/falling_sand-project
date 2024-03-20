@@ -1,0 +1,22 @@
+html {
+  font-family: "Manrope";
+  background-color: rgb(251, 251, 240);
+  height: 100dvh;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 70px;
+  text-align: center;
+}
+
+body {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  padding: 15px;
+}
+
+#canevas {
+  flex-grow: 1;
+}
