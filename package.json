@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "vite": "^5.2.0"
+  },
+  "name": "falling_sand-project",
+  "version": "1.0.0",
+  "main": "scripts/index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
