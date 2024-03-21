@@ -1,7 +1,7 @@
 const canevasContainer = document.getElementById("canevas");
 const canevasHeight = canevasContainer.clientHeight;
 const canevasWidth = canevasContainer.clientWidth;
-const taille = 20;
+const taille = 15;
 const nbColonne = Math.floor(canevasWidth / taille);
 const nbLigne = Math.floor(canevasHeight / taille);
 const grid = [];
@@ -37,8 +37,8 @@ function setup() {
 }
 
 function draw() {
-  frameRate(240);
-  stroke("black");
+  frameRate(30);
+  stroke("transparent");
   background("#fbfbf0");
   translate(offsetWidth, offsetHeight);
 
@@ -74,12 +74,23 @@ function draw() {
               (carreBasDroit === 1 || estContreBordDroit)
             ) {
               grid[y][x] = 1;
-            } else if (carreBasGauche === 0) {
-              grid[y][x] = 0;
-              grid[y + 1][x - 1] = 1;
             } else {
-              grid[y][x] = 0;
-              grid[y + 1][x + 1] = 1;
+              if (carreBasDroit === 0 && carreBasGauche === 0) {
+                let rand = random([0, 1]);
+                if (rand <= 0.5) {
+                  grid[y + 1][x - 1] = 1;
+                  grid[y][x] = 0;
+                } else {
+                  grid[y + 1][x + 1] = 1;
+                  grid[y][x] = 0;
+                }
+              } else if (carreBasGauche === 0) {
+                grid[y][x] = 0;
+                grid[y + 1][x - 1] = 1;
+              } else {
+                grid[y][x] = 0;
+                grid[y + 1][x + 1] = 1;
+              }
             }
           }
         }
