@@ -2,8 +2,8 @@ let cobble;
 let pchit;
 function preload() {
   soundFormats("mp3");
-  cobble = loadSound("../public/sounds/cobble.mp3");
-  pchit = loadSound("../public/sounds/pchit.mp3");
+  cobble = loadSound("/sounds/cobble.mp3");
+  pchit = loadSound("/sounds/pchit.mp3");
 }
 
 function playCobble() {

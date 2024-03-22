@@ -135,15 +135,27 @@ function initialiserGrid() {
 
 //-------------------------------------------
 
-function mousePressed() {
+function handleMouseAction() {
   let x = Math.floor((mouseX - offsetWidth) / taille);
   let y = Math.floor((mouseY - offsetHeight) / taille);
 
-  if (grid[y][x] === 1) {
-    grid[y][x] = 0;
-  } else if (mouseButton === LEFT) {
-    grid[y][x] = 1;
-  } else {
-    grid[y][x] = 2;
+  if (x >= 0 && y >= 0) {
+    if (grid[y][x] === 1) {
+      grid[y][x] = 0;
+    } else if (mouseButton === LEFT) {
+      grid[y][x] = 1;
+    } else {
+      grid[y][x] = 2;
+    }
   }
+}
+
+// quand la souris est cliquée
+function mousePressed() {
+  handleMouseAction();
+}
+
+// quand la souris est déplacée tout en étant cliquée
+function mouseDragged() {
+  handleMouseAction();
 }
